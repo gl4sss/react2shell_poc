@@ -30,9 +30,4 @@ python3 poc.py
 
 - [`poc.py`](poc.py): `requests`로 보내는 Python PoC.
 - [`server/`](server/): 취약 서버와 Docker Compose 설정.
-- [`DEBUGGING.md`](DEBUGGING.md): 서버 디버거 중단점과 스크린샷 지점.
-- [`upstream/01-submitted-poc.js`](upstream/01-submitted-poc.js): Lachlan Davidson의 [원본 제출 PoC](https://github.com/lachlan2k/React2Shell-CVE-2025-55182-original-poc/blob/e7e2e38b1bda60def733913007464167fe68c557/01-submitted-poc.js).
-- [`01-submitted-poc.js`](01-submitted-poc.js): 출력 표지를 `console.log(1234)//`로 바꾼 JS 작업본.
-- [`run-local.js`](run-local.js): 같은 payload를 전송하는 Node 실행 파일.
 
-원본과 작업본의 `01-submitted-poc.js`에는 전송 함수 호출이 주석 처리돼 있다. Python PoC와 JS 작업본의 출력 표지는 서로 다르다.
