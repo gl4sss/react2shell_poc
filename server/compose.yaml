@@ -1,0 +1,26 @@
+name: react2shell-target
+
+services:
+  target:
+    build: .
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      NEXT_TELEMETRY_DISABLED: "1"
+      POC_MARKER: "91455"
+      NODE_OPTIONS: "--require=/app/trace-console.js --stack-trace-limit=50 --enable-source-maps"
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,size=64m,mode=1777
+      - /app/.next/cache:rw,nosuid,size=128m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - lab
+
+networks:
+  lab:
+    internal: false
